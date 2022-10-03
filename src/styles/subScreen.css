@@ -1,0 +1,32 @@
+@media (max-width:850px) {
+    .carousel {
+        display: none
+    }
+    .GooglePlay {
+        display: none
+    }
+}
+
+img {
+    width: 100%;
+    height: 70vh
+}
+
+.carousel {
+    width: 90%;
+    height: 73vh
+}
+
+.carouselItem {
+    /* margin-top: 20px; */
+    /* background-color: #363a47fa; */
+}
+
+h2 {
+    text-align: center;
+}
+
+.desc {
+    text-align: center;
+    background-color: #363a47fa;
+}

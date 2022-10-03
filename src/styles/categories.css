@@ -1,0 +1,26 @@
+.Categories {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.Category {
+    margin: 5px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.4) -5px 5px 3px;
+    border-radius: 3px;
+}
+
+.subTitle {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 5px;
+    /* background-color: aliceblue; */
+}
+
+.Category:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,41 @@
+.Body {
+    margin: 0px
+}
+
+p {
+    text-align: right;
+    font-size: 15px;
+    color: #ffffff;
+    padding-right: 7px;
+}
+
+p.title {
+    text-align: right;
+    font-size: 17px;
+    color: #ffffff;
+    margin-top: 5px;
+}
+
+.subTitle {
+    text-align: center;
+    width: 120px;
+    color: #000
+    /* background-color: aliceblue; */
+}
+
+
+/* .products {
+} */
+
+.product {
+    width: 200px;
+    border-width: 2px;
+    background-color: #363a47fa;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.7) -10px 10px 30px;
+}
+
+.popUp {
+    box-shadow: rgba(0, 0, 0, 0.7) -10px 10px 10px;
+}
