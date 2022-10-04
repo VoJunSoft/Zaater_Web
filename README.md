@@ -1,5 +1,5 @@
 # Zaater Web
-https://github.com/facebook/create-react-app
+https://zaater.app
 
 # Zaater App
 
