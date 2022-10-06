@@ -10,16 +10,13 @@ export default function Categories(props) {
                 <div    className='Category' 
                         key={index} 
                         style={{
-                            backgroundColor:props.categoryValue == item ? '#2C4770' : '#565968fa',
-                            height:props.categoryValue == item ? 50 : 40
+                            backgroundColor:props.categoryValue == item ? '#2C4770' : '#565968fa'
                         }}
-                        onClick={()=>props.setCategoryValue(item)}
-                        >
+                        onClick={()=>props.setCategoryValue(item)}>
                     <p  className='subTitle'
                         style={{
                             color:props.categoryValue == item ? '#fac300' : '#fff'
-                        }}
-                    >
+                        }} >
                         {item}
                     </p>
                 </div>

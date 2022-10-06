@@ -1,8 +1,8 @@
 {
     "name": "zaater_web",
-    "homepage": "https://zaater.app",
     "version": "0.1.0",
     "private": true,
+    "homepage": "https://zaater.app",
     "dependencies": {
         "@emotion/react": "^11.10.4",
         "@emotion/styled": "^11.10.4",
@@ -16,6 +16,7 @@
         "gh-pages": "^4.0.0",
         "react": "^18.2.0",
         "react-bootstrap": "^2.5.0",
+        "react-bootstrap-icons": "^1.9.1",
         "react-dom": "^18.2.0",
         "react-router-dom": "^6.4.1",
         "react-scripts": "5.0.1",

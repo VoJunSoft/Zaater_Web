@@ -12,6 +12,7 @@
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.4) -5px 5px 3px;
     border-radius: 3px;
+    height: 40px;
 }
 
 .subTitle {

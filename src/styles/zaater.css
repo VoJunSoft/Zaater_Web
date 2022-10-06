@@ -11,7 +11,7 @@
 
 .title {
     color: #fac300;
-    font-size: 30px;
+    font-size: 40px;
     margin-right: 20px;
 }
 
@@ -68,11 +68,13 @@
     border-radius: 3px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 10px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     animation: float 3s ease-in-out infinite;
     transform: translatey(0px);
-    overflow: hidden;
+    overflow: visible;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 @keyframes float {
@@ -90,31 +92,6 @@
     }
     100% {
         transform: translatey(0px);
-    }
-}
-
-.logo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    animation: rolling 10s linear infinite;
-}
-
-@keyframes rolling {
-    0% {
-        transform: translatex(-2vh);
-    }
-    25% {
-        transform: translatex(-50vh);
-    }
-    50% {
-        transform: translatex(-85vh);
-    }
-    75% {
-        transform: translatex(-50vh);
-    }
-    100% {
-        transform: translatex(-2vh);
     }
 }
 
