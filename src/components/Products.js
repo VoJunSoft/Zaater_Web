@@ -50,7 +50,10 @@ export default function Products(props) {
 
     const ProductCardBeta = ({product}) => {
         return (
-            <a onClick={()=>props.setProductInfo(product)}>
+            <a onClick={()=>[
+                            props.setProductInfo(product),
+                            props.setLeftPostScreenName('productCard')
+                            ]}>
                 <div className='product'>
                     <img src={product.photos[0]} alt={product.product_name} className='CardImg'/>
                     <p className='title' style={{textAlign:'center'}}>{product.product_name}</p>
@@ -60,32 +63,30 @@ export default function Products(props) {
     }
       
     return (
-        <div>
-            <div className='products'>
-                {isLoading ?
-                    <progress style={{marginLeft:'40%', marginTop: 50}}/>
-                    :
-                    <FlatList
-                        list={ProductsList}
-                        renderWhenEmpty={() => <p className='empty'> لا توجد منتجات متاحة </p>}
-                        display={{
-                            grid: true,
-                            minColumnWidth: "100px",
-                            gridGap:'30px',
-                          }}
-                        sortBy={["date_listed", {key: "date_listed.seconds", descending: true}]}
-                        //groupBy={person => person.info.age > 18 ? 'Over 18' : 'Under 18'}
-                        paginationLoadingIndicatorPosition="center"
-                        renderItem={(product, index) =>[
-                            <ProductCardBeta product={product} key={index}/>
-                        ]}
-                        search={{
-                            by:'category',
-                            term: props.categoryValue === 'الكل' ? '' : props.categoryValue
+        <div className='products'>
+            {isLoading ?
+                <progress style={{marginLeft:'40%', marginTop: 50}}/>
+                :
+                <FlatList
+                    list={ProductsList}
+                    renderWhenEmpty={() => <p className='empty'> لا توجد منتجات متاحة </p>}
+                    display={{
+                        grid: true,
+                        minColumnWidth: "100px",
+                        gridGap:'30px',
                         }}
-                        />
-                }
-            </div>
+                    sortBy={["date_listed", {key: "date_listed.seconds", descending: true}]}
+                    //groupBy={person => person.info.age > 18 ? 'Over 18' : 'Under 18'}
+                    paginationLoadingIndicatorPosition="center"
+                    renderItem={(product, index) =>[
+                        <ProductCardBeta product={product} key={index}/>
+                    ]}
+                    search={{
+                        by:'category',
+                        term: props.categoryValue === 'الكل' ? '' : props.categoryValue
+                    }}
+                    />
+            }
         </div>
     )
 }

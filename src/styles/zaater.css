@@ -19,25 +19,25 @@
         .Left {
             height: 82vh;
             width: 34%;
-            background-color: #565968fa;
+            background-color: #2C4770;
             border-radius: 3px;
-            box-shadow: rgba(0, 0, 0, 0.7) 0px 20px 30px;
+            box-shadow: rgba(0, 0, 0, 0.7) 0px 10px 20px;
             overflow-y: scroll;
             display: flex;
             justify-content: center;
             align-items: center;
         }
         .Right {
-            height: 82vh;
+            height: 86vh;
             width: 64%;
-            background-color: #565968fa;
+            /* background-color: #565968fa; */
             border-radius: 3px;
-            box-shadow: rgba(0, 0, 0, 0.7) 0px 20px 30px;
+            /* box-shadow: rgba(0, 0, 0, 0.7) 0px 20px 30px; */
             overflow-y: scroll;
             padding: 18px
         }
         a.headerItem {
-            font-size: 16px;
+            font-size: 18px;
         }
     }
     
@@ -45,9 +45,9 @@
         .Left {
             height: 82vh;
             width: 100%;
-            background-color: #565968fa;
+            background-color: #2C4770;
             border-radius: 3px;
-            box-shadow: rgba(0, 0, 0, 0.7) 0px 20px 30px;
+            box-shadow: rgba(0, 0, 0, 0.7) 0px 10px 20px;
             overflow-y: scroll;
             display: flex;
             justify-content: center;
@@ -71,16 +71,21 @@
         align-items: center;
     }
     
+    .Right::-webkit-scrollbar {
+        display: none;
+        /* hide scrollbar for Chrome, Safari, and Opera */
+    }
+    
     .Header {
-        height: 10vh;
+        height: 12vh;
         width: 95%;
-        background-color: #565968fa;
+        background-color: #2C4770;
         border-radius: 3px;
-        box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 10px;
+        box-shadow: rgba(0, 0, 0, 0.7) 0px 5px 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        animation: float 3s ease-in-out infinite;
+        /* animation: float 3s ease-in-out infinite; */
         transform: translatey(0px);
         overflow: visible;
         padding-left: 10px;
@@ -115,10 +120,6 @@
         align-items: center;
     }
     
-    .Footer {
-        background-color: #2C4770;
-    }
-    
     a.headerItem {
         text-align: center;
         margin: 5px;
@@ -133,12 +134,12 @@
         transition: all 0.2s ease-in-out;
         text-decoration: none;
         font-family: monospace;
-        border: solid #363a47fa .5px
+        border: solid #fac300 .5px
     }
     
     .headerItem:hover {
         color: #fac300;
-        background-color: #2C4770;
+        background-color: #363a47fa;
     }
     
     a:hover {

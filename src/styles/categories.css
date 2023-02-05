@@ -23,11 +23,10 @@
 
 .Category {
     margin: 5px;
-    margin-top: 0px;
-    box-shadow: rgba(0, 0, 0, 0.4) -5px 5px 3px;
+    box-shadow: rgba(0, 0, 0, .7) -3px 3px 10px;
     border-radius: 3px;
     height: 60px;
-    border: solid .2px
+    /* border: solid .2px */
 }
 
 .subTitleCategory {

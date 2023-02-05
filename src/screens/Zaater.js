@@ -50,11 +50,22 @@ export default function Zaater() {
         )
     }
 
+    const [leftPostScreenName, setLeftPostScreenName] = useState('zaater')
     const renderLeftPostComponent = () => {
-        return(
-            !productInfo ? <ZaaterProjectCarousel /> : <ProductDisplay productInfo={productInfo}/>
+        // return(
+            switch(leftPostScreenName){
+                case 'zaater':
+                    return <ZaaterProjectCarousel />
+                case 'productCard':
+                    return <ProductDisplay productInfo={productInfo}/>
+                case 'devOp':
+                    return <ZaaterProjectCarousel />
+                default:
+                    return <ZaaterProjectCarousel />
 
-        )
+            }
+            // !productInfo ? <ZaaterProjectCarousel /> : <ProductDisplay productInfo={productInfo}/>
+        // )
     }
 
     return (
@@ -64,8 +75,8 @@ export default function Zaater() {
                 <div style={{paddingRight:10}}>
                     <img 
                         src={require('../assets/Zaatar-2.png')} 
-                        style={{height:70, width:70, cursor:'pointer'}} 
-                        onClick={()=>setProductInfo(null)}
+                        style={{height:90, width:90, cursor:'pointer'}} 
+                        onClick={()=> setLeftPostScreenName('zaater')}
                         />
                 </div> 
             </div>
@@ -76,7 +87,7 @@ export default function Zaater() {
                </div>
                <div className='Right'>
                     <Categories categoryValue={category} setCategoryValue={setCategory}/>
-                    <Products categoryValue={category} setProductInfo={setProductInfo}/>
+                    <Products categoryValue={category} setProductInfo={setProductInfo} setLeftPostScreenName={setLeftPostScreenName}/>
                </div>
             </div>
         </div>
