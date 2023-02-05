@@ -6,15 +6,15 @@ import ZaaterProjectCarousel from '../components/ZaaterProjectCarousel'
 import { MenuButtonWideFill} from 'react-bootstrap-icons'
 import Dropdown from 'react-bootstrap/Dropdown'
 import ProductDisplay from '../components/ProductDisplay'
+import JuSo from '../components/JuSo'
 
 export default function Zaater() {
     //initialoze category here and pass it to categories to set it's value and pass the value to products
     const [category, setCategory] = useState('الكل')
     //initiate productInfo state, set it from zaater and pass it to zaater left post
     const [productInfo, setProductInfo] = useState(null)
-    // const [tab, setTab] = useState('')
-    // const _renderLeftSlot = () => {
-    // }
+    
+    const [leftPostScreenName, setLeftPostScreenName] = useState('zaater')
 
     const DropDownMenu = () =>{
         return(
@@ -38,19 +38,19 @@ export default function Zaater() {
     const HeaderMenu = () => {
         return(
             <div style={{
-                width:'90%',
+                width:'100%',
                 display:'flex',
                 flexDirection:'row',
                 justifyContent:'center',
                 alignItems:'center'
             }}>
+                <a className='headerItem' onClick={()=>setLeftPostScreenName('juso')}> االفريق المطور </a>
                 <a className='headerItem' href="https://play.google.com/store/apps/details?id=com.junglesoft.zaater" target="_blank"> تحميل لأجهزة الاندرويد </a>
                 <a className='headerItem' href="https://apps.apple.com/il/app/zaater/id1661901014" target="_blank"> تحميل من متجر آبل </a>
             </div>
         )
     }
 
-    const [leftPostScreenName, setLeftPostScreenName] = useState('zaater')
     const renderLeftPostComponent = () => {
         // return(
             switch(leftPostScreenName){
@@ -58,8 +58,8 @@ export default function Zaater() {
                     return <ZaaterProjectCarousel />
                 case 'productCard':
                     return <ProductDisplay productInfo={productInfo}/>
-                case 'devOp':
-                    return <ZaaterProjectCarousel />
+                case 'juso':
+                    return <JuSo />
                 default:
                     return <ZaaterProjectCarousel />
 
@@ -72,13 +72,11 @@ export default function Zaater() {
         <div className="Zaater">
             <div className='Header'>
                 <HeaderMenu />
-                <div style={{paddingRight:10}}>
-                    <img 
-                        src={require('../assets/Zaatar-2.png')} 
-                        style={{height:90, width:90, cursor:'pointer'}} 
-                        onClick={()=> setLeftPostScreenName('zaater')}
-                        />
-                </div> 
+                <img 
+                    src={require('../assets/Zaatar-2.png')} 
+                    style={{height:90, width:99, cursor:'pointer', paddingRight:5}} 
+                    onClick={()=> setLeftPostScreenName('zaater')}
+                    />
             </div>
            
             <div className='Body'>
@@ -86,7 +84,7 @@ export default function Zaater() {
                    {renderLeftPostComponent()}
                </div>
                <div className='Right'>
-                    <Categories categoryValue={category} setCategoryValue={setCategory}/>
+                    <Categories categoryValue={category} setCategoryValue={setCategory} />
                     <Products categoryValue={category} setProductInfo={setProductInfo} setLeftPostScreenName={setLeftPostScreenName}/>
                </div>
             </div>
