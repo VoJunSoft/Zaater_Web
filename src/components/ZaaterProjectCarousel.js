@@ -1,46 +1,39 @@
 import React, {useState} from 'react'
-import Carousel from 'react-bootstrap/Carousel';
+import Carousel from 'react-bootstrap/Carousel'
 import '../styles/subScreen.css'
 
 export default function ZaaterProjectCarousel() {
-    const [projectSnaps, setProjectsSnaps] = useState([
+    const projectSnaps = [
         {
-            img:require("../assets/1.png"),
+            img:require("../assets/Z.png"),
             title:"",
-            caption:'',
+            caption:'أنشئ صفحتك الخاصة',
         },
         {
-            img:require("../assets/2.png"),
+            img:require("../assets/Z2.png"),
             title:"",
-            caption:'',
+            caption:'قم بتحميل ما تريد بيعه',
         },
         {
-            img:require("../assets/3.png"),
+            img:require("../assets/Z3.png"),
             title:"",
-            caption:'',
-        },
-        {
-            img:require("../assets/4.png"),
-            title:"",
-            caption:'',
-        },
-        {
-            img:require("../assets/5.png"),
-            title:"",
-            caption:'',
-        },
-        {
-            img:require("../assets/6.png"),
-            title:"",
-            caption:'',
-        },
-    ])
+            caption:'وسيتم عرضه على الجميع',
+        }
+    ]
+
     return (
-        <Carousel slide={true} className='carousel'>
+        <Carousel slide={true} style={{
+            display:'flex',
+                height:'96%', 
+                width:'90%', 
+                justifyContent:'center', 
+                alignItems:'center'
+                }}>
             {projectSnaps.map((project,index)=>[
                 <Carousel.Item interval={2000} className='carouselItem' key={index}>
                     <img
                         className="d-block w-100"
+                        style={{borderRadius:10, padding: 5}}
                         src={project.img}
                         alt={project.title}
                     />

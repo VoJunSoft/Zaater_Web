@@ -4,10 +4,14 @@ import Products from '../components/Products'
 import Categories from '../components/Categories'
 import ZaaterProjectCarousel from '../components/ZaaterProjectCarousel'
 import { MenuButtonWideFill} from 'react-bootstrap-icons'
-import Dropdown from 'react-bootstrap/Dropdown';
+import Dropdown from 'react-bootstrap/Dropdown'
+import ProductDisplay from '../components/ProductDisplay'
 
 export default function Zaater() {
+    //initialoze category here and pass it to categories to set it's value and pass the value to products
     const [category, setCategory] = useState('الكل')
+    //initiate productInfo state, set it from zaater and pass it to zaater left post
+    const [productInfo, setProductInfo] = useState(null)
     // const [tab, setTab] = useState('')
     // const _renderLeftSlot = () => {
     // }
@@ -31,21 +35,48 @@ export default function Zaater() {
         )
     }
 
+    const HeaderMenu = () => {
+        return(
+            <div style={{
+                width:'90%',
+                display:'flex',
+                flexDirection:'row',
+                justifyContent:'center',
+                alignItems:'center'
+            }}>
+                <a className='headerItem' href="https://play.google.com/store/apps/details?id=com.junglesoft.zaater" target="_blank"> تحميل لأجهزة الاندرويد </a>
+                <a className='headerItem' href="https://apps.apple.com/il/app/zaater/id1661901014" target="_blank"> تحميل من متجر آبل </a>
+            </div>
+        )
+    }
+
+    const renderLeftPostComponent = () => {
+        return(
+            !productInfo ? <ZaaterProjectCarousel /> : <ProductDisplay productInfo={productInfo}/>
+
+        )
+    }
+
     return (
         <div className="Zaater">
             <div className='Header'>
-                <DropDownMenu />
-                <img src={require('../assets/Zaatar-2.png')} style={{height:70, width:70}} /> 
+                <HeaderMenu />
+                <div style={{paddingRight:10}}>
+                    <img 
+                        src={require('../assets/Zaatar-2.png')} 
+                        style={{height:70, width:70, cursor:'pointer'}} 
+                        onClick={()=>setProductInfo(null)}
+                        />
+                </div> 
             </div>
-            <div className='Categories'>
-                <Categories categoryValue={category} setCategoryValue={setCategory}/>
-            </div>
+           
             <div className='Body'>
                <div className='Left'>
-                   <ZaaterProjectCarousel />
+                   {renderLeftPostComponent()}
                </div>
                <div className='Right'>
-                   <Products categoryValue={category} />
+                    <Categories categoryValue={category} setCategoryValue={setCategory}/>
+                    <Products categoryValue={category} setProductInfo={setProductInfo}/>
                </div>
             </div>
         </div>

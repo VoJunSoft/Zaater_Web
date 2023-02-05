@@ -1,10 +1,7 @@
-@media (max-width:850px) {
-    .carousel {
+@media (max-width:800px) {
+    /* .carousel {
         display: none
-    }
-    .GooglePlay {
-        display: none
-    }
+    } */
 }
 
 img {
@@ -14,7 +11,7 @@ img {
 
 .carousel {
     width: 90%;
-    height: 73vh
+    height: 75vh
 }
 
 h2 {

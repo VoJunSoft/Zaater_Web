@@ -27,7 +27,7 @@ export default function Products(props) {
 
     const popover = (product) => (
         <Popover className='popUp' style={{width:270, backgroundColor:'#2C4770', borderRadius:5, overflow:'hidden'}}>
-            <img src={product.photos[1]} style={{width:270,height:270}} alt={product.product_name}/>
+            <img src={product.photos[1] ? product.photos[1] : product.photos[0]} style={{width:270,height:270}} alt={product.product_name}/>
             <p>{handleDate(product.date_listed.seconds)}</p>
             <p>{product.product_name}</p>
             <p>{product.description}</p>
@@ -46,7 +46,18 @@ export default function Products(props) {
                 </div>
             </OverlayTrigger>
         );
-      }
+    }
+
+    const ProductCardBeta = ({product}) => {
+        return (
+            <a onClick={()=>props.setProductInfo(product)}>
+                <div className='product'>
+                    <img src={product.photos[0]} alt={product.product_name} className='CardImg'/>
+                    <p className='title' style={{textAlign:'center'}}>{product.product_name}</p>
+                </div>
+            </a>
+        );
+    }
       
     return (
         <div>
@@ -56,11 +67,7 @@ export default function Products(props) {
                     :
                     <FlatList
                         list={ProductsList}
-                        renderWhenEmpty={() => <div style={{ color:'#ffffff'}}>
-                                                <p className='title'>
-                                                    لا توجد منتجات متاحة
-                                                </p>
-                                                </div>}
+                        renderWhenEmpty={() => <p className='empty'> لا توجد منتجات متاحة </p>}
                         display={{
                             grid: true,
                             minColumnWidth: "100px",
@@ -70,7 +77,7 @@ export default function Products(props) {
                         //groupBy={person => person.info.age > 18 ? 'Over 18' : 'Under 18'}
                         paginationLoadingIndicatorPosition="center"
                         renderItem={(product, index) =>[
-                            <ProductCard product={product} key={index}/>
+                            <ProductCardBeta product={product} key={index}/>
                         ]}
                         search={{
                             by:'category',
