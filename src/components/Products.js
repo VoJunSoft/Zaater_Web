@@ -76,7 +76,6 @@ export default function Products(props) {
                         gridGap:'30px',
                         }}
                     sortBy={["date_listed", {key: "date_listed.seconds", descending: true}]}
-                    //groupBy={person => person.info.age > 18 ? 'Over 18' : 'Under 18'}
                     paginationLoadingIndicatorPosition="center"
                     renderItem={(product, index) =>[
                         <ProductCardBeta product={product} key={index}/>

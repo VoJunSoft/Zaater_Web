@@ -25,12 +25,3 @@ const analytics = getAnalytics(app);
 
 export default getFirestore(app)
 
-// const db = getFirestore(app)
-// async function getProducts() {
-//         // const products = collection(db, 'products');
-//         // const productsSnapshot = await getDocs(products);
-//         // const productList = productsSnapshot.docs.map(doc => doc.data());
-//         // //const productList = productsSnapshot.forEach(doc => doc.data());
-//         // return productList;
-// }
-// export default getProducts;

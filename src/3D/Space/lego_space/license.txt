@@ -1,0 +1,11 @@
+Model Information:
+* title:	LEGO Space Dart I
+* source:	https://sketchfab.com/3d-models/lego-space-dart-i-2fc7d4ad36ed451d8cb5256de50d4b28
+* author:	HansWurschd (https://sketchfab.com/HansWurschd)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "LEGO Space Dart I" (https://sketchfab.com/3d-models/lego-space-dart-i-2fc7d4ad36ed451d8cb5256de50d4b28) by HansWurschd (https://sketchfab.com/HansWurschd) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
