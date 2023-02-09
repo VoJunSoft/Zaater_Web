@@ -44,7 +44,12 @@ export default function Zaater() {
                 justifyContent:'center',
                 alignItems:'center'
             }}>
-                <a className='headerItem' onClick={()=>setLeftPostScreenName('juso')}> االفريق المطور </a>
+                <a 
+                    className='headerItem' 
+                    onClick={()=>setLeftPostScreenName('juso')} 
+                    style={{backgroundColor:leftPostScreenName==='juso' ? '#363a47fa' : null}}> 
+                    الفريق المطور
+                </a>
                 <a className='headerItem' href="https://play.google.com/store/apps/details?id=com.junglesoft.zaater" target="_blank"> تحميل لأجهزة الاندرويد </a>
                 <a className='headerItem' href="https://apps.apple.com/il/app/zaater/id1661901014" target="_blank"> تحميل من متجر آبل </a>
             </div>

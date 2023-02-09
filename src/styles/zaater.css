@@ -85,7 +85,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        /* animation: float 3s ease-in-out infinite; */
+        animation: float 3s ease-in-out infinite;
         transform: translatey(0px);
         overflow: visible;
         padding-left: 10px;
@@ -97,13 +97,13 @@
             transform: translatey(0px);
         }
         25% {
-            transform: translatey(-2px);
+            transform: translatey(-1px);
         }
         50% {
             transform: translatey(0px);
         }
         75% {
-            transform: translatey(2px);
+            transform: translatey(1px);
         }
         100% {
             transform: translatey(0px);
